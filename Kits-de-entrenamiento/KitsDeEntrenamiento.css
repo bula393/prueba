@@ -1,0 +1,91 @@
+
+body{
+    background-color: black;
+}
+#esquina    {
+    width: 15%;
+    padding: 1px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 60px;
+    height: 15%;
+    position: relative;
+
+}
+#esquina h1:hover{
+    color: rgb(113, 125, 233);
+}
+#logo{
+    height: 60px;
+}
+#nombre{
+    height: 60px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+#opciones {
+    margin-block-start: -50px;
+    height: 8%;
+} 
+
+.nav li a:hover{
+    color:rgb(255, 251, 0);
+}
+ .nav li ul{
+    display: none;  
+    position: absolute;
+    max-width: 200px;
+}
+.nav li:hover > ul{
+    display: block;
+}
+.desplegable{
+    color: orange;
+    display:flex ;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    list-style: none;
+    margin-left: -40px; 
+    margin-inline-end: 50%;
+
+}
+lavel #opciti:hover > label{
+    display: block;
+}
+ul{
+    max-width: 70px;
+}
+ .desplazable{
+    max-height: 100%;
+    display: flex;
+    overflow: auto;
+    gap: 30px;
+}
+.desplazable::-webkit-scrollbar{
+    height: 10px;
+}
+.desplazable::-webkit-scrollbar-thumb{
+    background: orange;
+    height: 10px;
+    border-radius: 5px;
+}
+.desplazable .item{
+  width: 200px;
+  border-radius: 60px;
+  margin-left:2%;
+  margin-right:2% ;
+}
+h1{
+    display: flex;
+    text-align: center;
+    color: orange;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.subseccion{
+    margin-top: -10px;
+}
