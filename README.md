@@ -127,7 +127,7 @@ int vertical;
 CircularBuffer<puntoR, 30> giros;
 
 char apagado[8][32] = {
-  {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+  {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'o', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -146,7 +146,7 @@ void setup()
  
   pinMode(boton, INPUT);
   
-  pantalla.begin(11, 13, 10, 8);
+  pantalla.begin(11, 13, 10, 4);
 
   Serial.begin(9600);
  
@@ -180,7 +180,7 @@ void loop()
  
     int estado=digitalRead(boton);
  
-    if(estado==0)
+    if(estado==1)
  
       {
  
@@ -202,9 +202,9 @@ void loop()
  
       }
  
-      joyposicionY=map(analogRead(A5),1024,0,0,1024);
+      joyposicionY=map(analogRead(A3),1024,0,0,1024);
  
-      joyposicionX=analogRead(A3);
+      joyposicionX=analogRead(A5);
  
       Serial.print(joyposicionX);
  
@@ -218,11 +218,11 @@ void loop()
  
       {
  
-      joyposicionY=map(analogRead(A4),1024,0,0,1024);
+      joyposicionY=map(analogRead(A3),1024,0,0,1024);
  
       joyposicionX=analogRead(A5);
  
-        if((cabeza.X>=0)&&(cabeza.X>=0)&&(cabeza.X<32)&&(cabeza.Y<8))
+        if((cabeza.X>=0)&&(cabeza.Y>=0)&&(cabeza.X<32)&&(cabeza.Y<8))
  
           {
  
@@ -286,15 +286,15 @@ void loop()
  
             comer();
  
-            mostrar();
+            datos();
  
             delay(1000);
  
-            for(int i=0;i<18;i++)
+            for(int i=0;i<8;i++)
  
             {
  
-              for(int j=0;j<18;j++)
+              for(int j=0;j<32;j++)
  
                 {
  
